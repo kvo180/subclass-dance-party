@@ -23,8 +23,8 @@ $(document).ready(function() {
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
+      $('body').height() * Math.random(),
+      $('body').width() * Math.random(),
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
@@ -35,25 +35,25 @@ $(document).ready(function() {
     var runningDancerMakerFunction = window[runningDancerMakerFunctionName];
 
     var runningDancer = new runningDancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
+      $('body').height() * Math.random(),
+      $('body').width() * Math.random(),
       Math.random() * 1000
     );
     $('body').append(runningDancer.$node);
   });
 
 
-  $('.addRotatingDancerButton').on('click', function(event){
+  $('.addRotatingDancerButton').on('click', function(event) {
     var rotatingDancerMakerFunctionName = $(this).data('rotating-dancer-maker-function-name');
     var rotatingDancerMakerFunction = window[rotatingDancerMakerFunctionName];
 
     var rotatingDancer = new rotatingDancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
+      $('body').height() * Math.random(),
+      $('body').width() * Math.random(),
       Math.random() * 1000
       );
-      $('body').append(rotatingDancer.$node);
-     });
+    $('body').append(rotatingDancer.$node);
+  });
 
 
 });
