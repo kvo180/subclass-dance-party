@@ -29,5 +29,32 @@ $(document).ready(function() {
     );
     $('body').append(dancer.$node);
   });
+
+  $('.addRunningDancerButton').on('click', function(event) {
+    var runningDancerMakerFunctionName = $(this).data('running-dancer-maker-function-name');
+    var runningDancerMakerFunction = window[runningDancerMakerFunctionName];
+
+    var runningDancer = new runningDancerMakerFunction(
+      $("body").height() * Math.random(),
+      $("body").width() * Math.random(),
+      Math.random() * 1000
+    );
+    $('body').append(runningDancer.$node);
+  });
+
+
+  $('.addRotatingDancerButton').on('click', function(event){
+    var rotatingDancerMakerFunctionName = $(this).data('rotating-dancer-maker-function-name');
+    var rotatingDancerMakerFunction = window[rotatingDancerMakerFunctionName];
+
+    var rotatingDancer = new rotatingDancerMakerFunction(
+      $("body").height() * Math.random(),
+      $("body").width() * Math.random(),
+      Math.random() * 1000
+      );
+      $('body').append(rotatingDancer.$node);
+     });
+
+
 });
 
