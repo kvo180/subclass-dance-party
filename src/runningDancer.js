@@ -1,6 +1,5 @@
 var RunningDancer = function(top, left, timeBetweenSteps) { 
-  MakeDancer.call(this, top, left);
-  this.$node = $('<span class="runningDancer"></span>');
+  MakeDancer.call(this, top, left, timeBetweenSteps);
 };
 
 RunningDancer.prototype = Object.create(MakeDancer.prototype);
@@ -9,6 +8,7 @@ RunningDancer.prototype.oldStep = MakeDancer.prototype.step;
 
 RunningDancer.prototype.step = function() {
   this.oldStep();
+  this.$node.addClass('runningDancer');
   this.animateSpan();
 };
 

@@ -28,6 +28,7 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+    window.dancers.push(dancer);
   });
 
   $('.addRunningDancerButton').on('click', function(event) {
@@ -40,6 +41,7 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     $('body').append(runningDancer.$node);
+    window.dancers.push(runningDancer);
   });
 
 
@@ -53,6 +55,34 @@ $(document).ready(function() {
       Math.random() * 1000
       );
     $('body').append(rotatingDancer.$node);
+    window.dancers.push(rotatingDancer);
+  });
+
+  $('.addBoringDancerButton').on('click', function(event) {
+    var boringDancerMakerFunctionName = $(this).data('boring-dancer-maker-function-name');
+    var boringDancerMakerFunction = window[boringDancerMakerFunctionName];
+
+    var boringDancer = new boringDancerMakerFunction(
+      $('body').height() * Math.random(),
+      $('body').width() * Math.random(),
+      Math.random() * 1000
+    );
+    $('body').append(boringDancer.$node);
+    window.dancers.push(boringDancer);
+  });
+
+
+
+  $('.lineButton').on('click', function(event) {
+    for (var i = 0; i < window.dancers.length; i++) {
+      var node = window.dancers[i];
+      if (node.$node.is(':animated')) {
+        node.stop = true;
+        node.$node.stop(true, true);
+      }
+      node.$node.animate({top: $('body').height() / 2}, function() {});
+      node.$node.animate({left: node.$node.left + 10}, function() {});
+    }
   });
 
 

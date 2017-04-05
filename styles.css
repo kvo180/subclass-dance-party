@@ -4,6 +4,9 @@ body, html{
 body{
   margin: 0px;
   background-color:#444;
+  background-image: url('https://cms.casillion.com/wp-content/uploads/games/backgrounds/SouthPark_bg.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -21,17 +24,72 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
-  position:absolute;
+  background: url('http://vignette2.wikia.nocookie.net/southpark/images/a/a7/StanMarsh.png/revision/latest?cb=20160918033335') no-repeat top left;
+  border: none;
+  border-radius: 0px;
+  position: absolute;
+  width: 125px;
+  height: 150px;
+  display: block;
+  background-size: 75%;
+}
+
+.blinkyDancer {
+  background: url('http://vignette1.wikia.nocookie.net/southpark/images/7/70/165px-KyleBroflovski.png/revision/latest?cb=20160918061250') no-repeat top left;
+  border: none;
+  border-radius: 0px;
+  position: absolute;
+  width: 150px;
+  height: 150px;  
+  display: block;
+  background-size: 75%;
+}
+
+.addRunningDancerButton {
+  padding:5px 12px;
+  float: right;
 }
 
 .runningDancer{
-  border:10px solid red;
-  border-radius:10px;
-  position:absolute;
+  position: absolute;
+  background: url('http://vignette2.wikia.nocookie.net/southpark/images/6/6f/KennyMcCormick.png/revision/latest?cb=20160409020502') no-repeat top left;
+  width: 150px;
+  height: 150px;
+  display: block;
+  background-size: 75%;
+  border-radius: 0px;
+  border: none;
+}
+
+.addBoringDancerButton {
+  padding: 5px 12px;
+  float: right;
+}
+
+.lineButton {
+  padding: 5px 12px;
+  float: right;
+}
+
+.addRotatingDancerButton {
+  padding:5px 12px;
+  float: right;
 }
 
 .rotatingDancer{
   border-radius: 0px;
+  border: none;
+  background: url('http://vignette4.wikia.nocookie.net/simpsons/images/b/b5/Eric_Cartman_(Original_South_Park_version).png/revision/latest?cb=20150213104708') no-repeat top left;
+  background-size: 100%;
+  display: block;
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  -webkit-animation:spin 4s linear infinite;
+  -moz-animation:spin 4s linear infinite;
+  animation:spin 4s linear infinite;
 }
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
